@@ -1,0 +1,7 @@
+url = "https://http-ws.seven7four4.repl.co/ws"
+body = "{\"url\":\"wss://45da8293-13d5-48fe-a691-e4da8e40ce7e.id.repl.co/api\",\"message\":\"/get Hello\"}"
+method = "post"
+headers = {
+"Content-Type": "application/json"
+}
+$.print($.http_request(method, url, headers, body).text)

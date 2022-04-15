@@ -7,4 +7,5 @@ websocket = (wsurl, msg) {
   }
   return $.http_request(method, url, headers, body).text
 }
+
 return websocket

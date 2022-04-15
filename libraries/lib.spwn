@@ -1,0 +1,10 @@
+websocket = (wsurl, msg) {
+url = "https://http-ws.seven7four4.repl.co/ws"
+body = "{\"url\":\"" + wsurl + "\",\"message\":\"" + msg + "\"}"
+method = "post"
+headers = {
+"Content-Type": "application/json"
+}
+return $.http_request(method, url, headers, body).text
+}
+return websocket

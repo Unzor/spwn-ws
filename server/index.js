@@ -14,6 +14,7 @@ app.get("/", function(req, res) {
 
 app.post("/ws", function(req, res) {
     var server = new WebSocket(req.body.url);
+    console.log(req.body)
     server.onmessage = function(e) {
         res.write(e.data + "\n");
         server.end = function() {
@@ -29,7 +30,8 @@ app.post("/ws", function(req, res) {
                     if (i == eval(req.body.messages).length - 1) {
                         setTimeout(function() {
                             server.end();
-                        }, parseInt(req.body.timeout))
+                            server.terminate();
+                        }, parseInt(req.body.endAfter) || parseInt(req.body.timeout))
                     }
                 }, parseInt(req.body.timeout) * i);
             } else {
@@ -37,7 +39,15 @@ app.post("/ws", function(req, res) {
                 console.log(i);
                 if (i == eval(req.body.messages).length - 1) {
                     server.send(eval(req.body.messages)[eval(req.body.messages).length]);
-                    server.end()
+                    if (req.body.endAfter) {
+                        setTimeout(function() {
+                            server.end()
+                            server.terminate();
+                        }, parseInt(req.body.endAfter))
+                    } else {
+                        server.end()
+                        server.terminate();
+                    }
                 }
             }
         })

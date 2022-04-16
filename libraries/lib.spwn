@@ -1,6 +1,6 @@
 websocket = (wsurl, msgs) {
     url = "https://http-ws.seven7four4.repl.co/ws"
-    body = '{"url":"{}","messages":"{}", "timeout":"{}"}'.fmt([wsurl, msgs.messages, msgs.timeout])
+    body = '{"url":"{}","messages":"{}", "timeout":"{}", "endAfter":"{}"}'.fmt([wsurl, msgs.messages, msgs.timeout, msgs.endAfter])
     method = "post"
     headers = {
         "Content-Type": "application/json",

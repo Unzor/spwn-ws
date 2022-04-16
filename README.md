@@ -21,7 +21,7 @@ timeout: 100
 # Setup
 ```
 git clone https://github.com/Unzor/spwn-ws
-touch balls.spwn
+touch spwnshit.spwn
 ```
 (write some spwn shit)
 ```

@@ -7,8 +7,8 @@ let websocket = import spwn_ws
 
 websocket(websocket server URL here, {
   messages: [array of messages to send here],
-  timeout: milliseconds before sending next message (optional),
-  endAfter: milliseconds to wait after last message to end connection (optional, defaults to timeout)
+  timeout: milliseconds before sending next message (optional, defaults to 100ms),
+  endAfter: milliseconds to wait after last message to end connection (optional, defaults to timeout, if none defaults to 100ms)
 })
 ```
 An example of usage:

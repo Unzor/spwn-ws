@@ -25,7 +25,7 @@ $.print(websocket("wss://ws-test.seven7four4.repl.co/", {
 # Setup
 ```
 sghtt
----->install
------->spwn_ws
+----> install
+------> spwn_ws
 ```
 To get SPGHTT, click [here.](https://github.com/Unzor/SPGHTT/releases/download/v1.0/spghtt-setup.exe)
